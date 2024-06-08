@@ -1,10 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Portfolio.Data.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+var connection = "Database";
+builder.Services.AddDbContext<PortfolioDbContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration.GetConnectionString(connection));
+});
+
+
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
