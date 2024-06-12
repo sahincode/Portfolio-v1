@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio.Business.Services.Interface
+namespace Portfolio.Business.DTOs.EmployeeModelDTOs
 {
-    public  interface IEmployeeService
+    public class EmployeeUpdateDto
     {
     }
 }
